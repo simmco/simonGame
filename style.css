@@ -1,0 +1,78 @@
+body {
+  background: #FFCC66;
+  margin: 30px 10px 30px 10px;
+}
+
+.round-button {
+  width: 100%;
+}
+
+.round-button-circle {
+  height: 0;
+  padding-bottom: 100%;
+  border-radius: 50%;
+  border: 10px solid #cfdcec;
+  overflow: hidden;
+  background: #30588e;
+  box-shadow: 0 0 3px gray;
+}
+
+.round-button-circle:hover {
+  background: #4679BD;
+}
+
+.round-button a {
+  display: block;
+  float: left;
+  width: 100%;
+  padding-top: 50%;
+  padding-bottom: 60%;
+  line-height: 1em;
+  margin-top: -0.5em;
+  text-align: center;
+  color: white;
+  font-family: Verdana;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+}
+.button{
+
+  display: inline-block;
+}
+
+
+#green {
+  background: #339900;
+}
+#green:hover {
+  background: #66CC00;
+}
+
+#yellow {
+  background: #CCCC00;
+}
+#yellow:hover {
+  background: #FFFF00;
+}
+
+#red {
+  background: #990000;
+}
+#red:hover {
+  background: #CC0000;
+}
+
+#info {
+  margin: 30px 0px 20px 0px;
+}
+
+#start {
+  float:left;
+}
+
+#countWindow {
+  margin-top: 20px;
+  height: 10%;
+  width: 60%;
+}
