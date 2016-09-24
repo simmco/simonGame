@@ -1,5 +1,5 @@
 body {
-  background: #FFCC66;
+  background: #34495E;
   margin: 30px 10px 30px 10px;
 }
 
@@ -9,26 +9,22 @@ body {
 
 .round-button-circle {
   height: 0;
-  padding-bottom: 100%;
+  padding-bottom: 90%;
   border-radius: 50%;
   border: 10px solid #cfdcec;
   overflow: hidden;
-  background: #30588e;
-  box-shadow: 0 0 3px gray;
-}
-
-.round-button-circle:hover {
-  background: #4679BD;
+  background: #2980D9;
+  box-shadow: 0 0 2px gray;
 }
 
 .round-button a {
   display: block;
   float: left;
   width: 100%;
-  padding-top: 50%;
+  padding-top: 60%;
   padding-bottom: 60%;
   line-height: 1em;
-  margin-top: -0.5em;
+  margin-top: 0em;
   text-align: center;
   color: white;
   font-family: Verdana;
@@ -43,25 +39,19 @@ body {
 
 
 #green {
-  background: #339900;
+  background: #019875;
 }
-#green:hover {
-  background: #66CC00;
-}
+
 
 #yellow {
-  background: #CCCC00;
-}
-#yellow:hover {
-  background: #FFFF00;
+  background: #F39C12;
 }
 
+
 #red {
-  background: #990000;
+  background: #C0392D;
 }
-#red:hover {
-  background: #CC0000;
-}
+
 
 #info {
   margin: 30px 0px 20px 0px;

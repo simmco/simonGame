@@ -38,43 +38,43 @@ window.onload = (function() {
 
   // COLLOOORRRSS
   function flashBlueLight() {
-    document.getElementById("blue").style.backgroundColor = '#4679BD';
+    document.getElementById("blue").style.backgroundColor = '#3498DB';
     audio1 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3");
     audio1.play();
   }
 
   function flashRedLight() {
-    document.getElementById("red").style.backgroundColor = '#CC0000';
+    document.getElementById("red").style.backgroundColor = '#E74C3C';
     audio2 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3");
     audio2.play();
   }
 
   function flashYellowLight() {
-    document.getElementById("yellow").style.backgroundColor = '#FFFF00';
+    document.getElementById("yellow").style.backgroundColor = '#F1C40F';
     audio3 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
     audio3.play();
   }
 
   function flashGreenLight() {
-    document.getElementById("green").style.backgroundColor = '#66CC00';
+    document.getElementById("green").style.backgroundColor = '#27AE60';
     audio4 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3");
     audio4.play();
   }
 
   function greenLightOff() {
-    document.getElementById("green").style.backgroundColor = '#339900';
+    document.getElementById("green").style.backgroundColor = '#019875';
   }
 
   function yellowLightOff() {
-    document.getElementById("yellow").style.backgroundColor = '#CCCC00';
+    document.getElementById("yellow").style.backgroundColor = '#F39C12';
   }
 
   function redLightOff() {
-    document.getElementById("red").style.backgroundColor = '#990000';
+    document.getElementById("red").style.backgroundColor = '#C0392D';
   }
 
   function blueLightOff() {
-    document.getElementById("blue").style.backgroundColor = '#30588e';
+    document.getElementById("blue").style.backgroundColor = '#2980D9';
   }
 
   // show Colors ------> figuere out to show one by one
@@ -112,37 +112,35 @@ window.onload = (function() {
     console.log("----------------")
   }
 
-  $('#strict').click(function() {
-    if (strictOn === false) {
+    //change color strict-button
+  document.getElementById("strict").addEventListener("click", function () {
+      if (strictOn === false) {
       strictOn = true;
+      document.getElementById("strict").className = "btn btn-warning";
     } else {
       strictOn = false;
+      document.getElementById("strict").className = "btn btn-default";
     }
-  })
+  });
 
-  $("#green, #blue, #yellow, #red").click(function() {
-    playerPush = this.id;
-    if (this.id == "green") {
-      flashGreenLight();
-    } else if (this.id == "red") {
-      flashRedLight();
-    } else if (this.id == "blue") {
-      flashBlueLight();
-    } else if (this.id == "yellow") {
-      flashYellowLight();
-    }
-    user();
-  })
+//
+
+document.getElementById("green").addEventListener("click", function() {playerPush = this.id;flashGreenLight();setTimeout(greenLightOff, 500);user();});
+document.getElementById("red").addEventListener("click",  function() {playerPush = this.id;flashRedLight();setTimeout(redLightOff, 500);user();});
+document.getElementById("blue").addEventListener("click",  function() {playerPush = this.id;flashBlueLight();setTimeout(blueLightOff, 500);user();});
+document.getElementById("yellow").addEventListener("click",  function() {playerPush = this.id;flashYellowLight();setTimeout(yellowLightOff, 500);user();});
 
   // get User input
   function user() {
     if (playerPush == colorOrder[pushCounter] && pushCounter == count - 1) {
-      pushCounter = 0;
-      generateGame();
-      console.log("yuhe");
-      if (count == 20) {
+      if (count == 21) {
         alert("Well Done!")
         setTimeout(init, 3000);
+      }
+      else {
+        pushCounter = 0;
+        generateGame();
+        console.log("yuhe");
       }
     } else if (playerPush == colorOrder[pushCounter]) {
       pushCounter += 1;
@@ -178,7 +176,8 @@ window.onload = (function() {
   }
 
   // start the game
-  $("#start").click(function() {
-    init();
-  });
+    document.getElementById("start").addEventListener("click",init);
+
 });
+
+//disable buttons
