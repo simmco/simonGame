@@ -12,19 +12,6 @@ window.onload = (function() {
     3: 'yellow',
     4: 'red'
   }
-  var background = {
-      'blue': '#4679BD',
-      'red': '#CC0000',
-      'yellow': '#FFFF00',
-      'green': '#66CC00'
-    }
-    //flashing background
-  var backgroundFlash = {
-    'blue': '#30588e',
-    'red': '#990000',
-    'yellow': '#CCCC00',
-    'green': '#339900'
-  }
 
   //function creating randomColor
   function randomColors() {
@@ -59,6 +46,11 @@ window.onload = (function() {
     document.getElementById("green").style.backgroundColor = '#27AE60';
     audio4 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3");
     audio4.play();
+  }
+
+  function buzzError () {
+    audio5 = new Audio("http://www.soundjay.com/misc/fail-buzzer-01.wav");
+    audio5.play();
   }
 
   function greenLightOff() {
@@ -108,6 +100,7 @@ window.onload = (function() {
         }, pause);
       }
 
+
     }
     console.log("----------------")
   }
@@ -133,7 +126,7 @@ document.getElementById("yellow").addEventListener("click",  function() {playerP
   // get User input
   function user() {
     if (playerPush == colorOrder[pushCounter] && pushCounter == count - 1) {
-      if (count == 21) {
+      if (count == 20) {
         alert("Well Done!")
         setTimeout(init, 3000);
       }
@@ -146,6 +139,7 @@ document.getElementById("yellow").addEventListener("click",  function() {playerP
       pushCounter += 1;
       console.log("just+1");
     } else {
+      buzzError();
       if (strictOn === true) {
         init();
       } else {
@@ -179,5 +173,3 @@ document.getElementById("yellow").addEventListener("click",  function() {playerP
     document.getElementById("start").addEventListener("click",init);
 
 });
-
-//disable buttons
